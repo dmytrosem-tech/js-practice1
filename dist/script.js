@@ -15472,6 +15472,7 @@ __webpack_require__.r(__webpack_exports__);
 window / addEventListener("DOMContentLoaded", function () {
   Object(_modules_modals__WEBPACK_IMPORTED_MODULE_1__["default"])();
   Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])(".glazing_slider", ".glazing_block", ".glazing_content", "active");
+  Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])(".decoration_slider", ".no_click", ".decoration_content > div > div", "after_click");
 });
 
 /***/ }),
@@ -15547,41 +15548,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {
-//   const header = document.querySelector(headerSelector),
-//     tab = document.querySelectorAll(tabSelector),
-//     content = document.querySelectorAll(contentSelector);
-//   function hideTabContent() {
-//     content.forEach((item) => {
-//       item.style.display = "none";
-//     });
-//     tab.forEach((item) => {
-//       item.classList.remove(activeClass);
-//     });
-//   }
-//   function showTabContent(i = 0) {
-//     content[i].style.display = "block";
-//     tab[i].classList.add(activeClass);
-//   }
-//   hideTabContent();
-//   showTabContent();
-//   header.addEventListener("click", (e) => {
-//     const target = e.target;
-//     console.log(e.target);
-//     if (
-//       target.classList.contains(tabSelector.replace(/\./, "")) ||
-//       target.parentNode.classList.contains(tabSelector.replace(/\./, ""))
-//     ) {
-//       tab.forEach((item, i) => {
-//         if (target == item || target.parrentNode == item) {
-//           hideTabContent();
-//           showTabContent(i);
-//         }
-//       });
-//     }
-//   });
-// };
-// export default tabs;
 var tabs = function tabs(headerSelector, tabSelector, contentSelector, activeClass) {
   var header = document.querySelector(headerSelector),
       tab = document.querySelectorAll(tabSelector),
@@ -15589,7 +15555,7 @@ var tabs = function tabs(headerSelector, tabSelector, contentSelector, activeCla
 
   function hideTabContent() {
     content.forEach(function (item) {
-      item.style.display = 'none';
+      item.style.display = "none";
     });
     tab.forEach(function (item) {
       item.classList.remove(activeClass);
@@ -15598,14 +15564,15 @@ var tabs = function tabs(headerSelector, tabSelector, contentSelector, activeCla
 
   function showTabContent() {
     var i = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-    content[i].style.display = 'block';
+    content[i].style.display = "block";
     tab[i].classList.add(activeClass);
   }
 
   hideTabContent();
   showTabContent();
-  header.addEventListener('click', function (e) {
+  header.addEventListener("click", function (e) {
     var target = e.target;
+    console.log(e.target);
 
     if (target && (target.classList.contains(tabSelector.replace(/\./, "")) || target.parentNode.classList.contains(tabSelector.replace(/\./, "")))) {
       tab.forEach(function (item, i) {
